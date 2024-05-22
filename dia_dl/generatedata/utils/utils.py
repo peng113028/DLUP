@@ -2,7 +2,11 @@ import numpy as np
 
 import os
 import json
+<<<<<<< HEAD
+from typing import Literal, Dict
+=======
 from typing import Literal
+>>>>>>> 2fe29bdfbe3d9d607494de63d842bd48bbecce79
 
 
 def create_dir(path: str):
@@ -22,6 +26,13 @@ def read_json(path: str):
         content = json.loads(f.read())
     return content
 
+<<<<<<< HEAD
+def save_json(path: str, content: Dict):
+    with open(path, mode='w') as f:
+        json.dump(content, f, ensure_ascii=False)
+
+=======
+>>>>>>> 2fe29bdfbe3d9d607494de63d842bd48bbecce79
 
 def is_data_exists(content, data_name, path: str):
     """
@@ -36,6 +47,8 @@ def is_data_exists(content, data_name, path: str):
     create_dir(path)
 
 
+<<<<<<< HEAD
+=======
 def read_data_task_path(content, data_name: str, task_type: Literal['identify', 'quant'], data_usage: Literal['train', 'test', 'temp'], file_name: str):
     """
         获取`定性/定量` `训练/测试/临时`数据的文件路径
@@ -56,6 +69,7 @@ def read_data_task_path(content, data_name: str, task_type: Literal['identify', 
     return path
 
 
+>>>>>>> 2fe29bdfbe3d9d607494de63d842bd48bbecce79
 def read_label_result_path(content, data_name: str, type: Literal['label', 'result'], file_name: str):
     root_path = content['root']
     path = os.path.join(root_path, type, data_name, file_name)
@@ -68,6 +82,9 @@ def read_dict_npy(path: str):
 
 
 def read_npy(path: str):
+<<<<<<< HEAD
+    return np.load(path, allow_pickle=True)
+=======
     return np.load(path, allow_pickle=True)
 
 
@@ -105,3 +122,4 @@ def read_data_task_path_infile_module(
         if f != 'collection.npy'
     ]
     return paths
+>>>>>>> 2fe29bdfbe3d9d607494de63d842bd48bbecce79
